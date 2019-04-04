@@ -1,0 +1,20 @@
+-----NEH ALGORITHM------
+Iteration:0 Sequence:0 3 2 1  Cmax:29 Time:00:00:00.0214862
+
+
+-----NEH ALGORITHM------
+Iteration:1 Sequence:16 12 8 7 14 13 10 15 18 0 5 6 3 4 17 9 1 19 11 2  Cmax:1232 Time:00:00:00.0158988
+
+
+-----NEH ALGORITHM------
+Iteration:2 Sequence:18 17 2 16 5 14 15 19 11 1 8 6 10 12 0 4 7 3 9 13  Cmax:1056 Time:00:00:00.0101225
+
+
+-----NEH ALGORITHM------
+Iteration:3 Sequence:14 12 3 2 18 13 15 10 0 11 6 4 17 19 8 16 5 7 9 1  Cmax:1067 Time:00:00:00.0107508
+
+
+-----NEH ALGORITHM------
+Iteration:4 Sequence:12 8 3 13 15 7 16 18 10 1 6 0 4 9 14 11 2 19 5 17  Cmax:1224 Time:00:00:00.0220492
+
+
