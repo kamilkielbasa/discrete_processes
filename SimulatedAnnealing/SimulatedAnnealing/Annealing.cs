@@ -20,9 +20,7 @@ namespace SimulatedAnnealing
             int randomIndex1 = random.Next(0, currentListOfMachines.Count());
             int randomIndex2 = random.Next(0, currentListOfMachines.Count());
 
-            Machine tempMachine = newListOfMachines[randomIndex1];
-            newListOfMachines[randomIndex1] = newListOfMachines[randomIndex2];
-            newListOfMachines[randomIndex2] = tempMachine;
+            Machine.SwapJobs(newListOfMachines, randomIndex1, randomIndex2);
         }
 
         public static decimal StartAnnealing(List<Machine> listOfMachines)
@@ -68,8 +66,8 @@ namespace SimulatedAnnealing
                 Console.WriteLine("calculating cmax = {0} ...", distance);
             }
 
-            foreach (var machine in listOfMachines)
-                Console.Write("{0} ", machine.machineId);
+            for (int i = 0; i < listOfMachines.First().jobs.Length; ++i)
+                Console.Write("{0} ", listOfMachines[0].jobs[i].jobId);
 
             Console.WriteLine("cmax = {0}", distance);
 

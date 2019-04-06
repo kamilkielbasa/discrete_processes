@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace SimulatedAnnealing
 {
+    public struct FinishTime
+    {
+        public decimal executionTime;
+        public decimal summaryTime;
+    }
+
     public class Machine
     {
-        public int machineId { get; }
         public Job[] jobs { get; set; }
 
-        public Machine(int machineId, int numberOfJobs)
+        public Machine(int numberOfJobs)
         {
             try
             {
-                this.machineId = machineId;
-                this.jobs = new Job[numberOfJobs];
+                jobs = new Job[numberOfJobs];
             }
             catch(Exception ex)
             {
@@ -26,15 +30,64 @@ namespace SimulatedAnnealing
 
         public static decimal FindCmax(List<Machine> listOfMachines)
         {
-            decimal cmax = 0;
+            int numberOfMachines = listOfMachines.Count();
+            int numberOfJobs = listOfMachines.First().jobs.Length;
 
-            for (int i = 0; i < listOfMachines.Count(); ++i)
-                cmax += listOfMachines[i].jobs[0].executionTime;
+            FinishTime[,] finishTime = new FinishTime[numberOfMachines, numberOfJobs];
 
-            for (int i = 1; i < listOfMachines[0].jobs.Length; ++i)
-                cmax += listOfMachines[listOfMachines.Count() - 1].jobs[i].executionTime;
+            // wpisanie czasu wykonań każdej z prac.
+            for (int i = 0; i < numberOfMachines; ++i)
+            {
+                for (int j = 0; j < numberOfJobs; ++j)
+                {
+                    finishTime[i, j].executionTime = listOfMachines[i].jobs[j].executionTime;
+                }
+            }
 
-            return cmax;
+            // czas wykonania pierwszej maszyny, pierwszej pracy jest czasem łączenego wykonania
+            finishTime[0, 0].summaryTime = finishTime[0, 0].executionTime;
+
+            // liczymy czas łączny dla pierwszej maszyny potrzebny do daleszego porównania.
+            for (int i = 1; i < numberOfJobs; ++i)
+                finishTime[0, i].summaryTime = finishTime[0, i].executionTime + finishTime[0, i - 1].summaryTime;
+
+            for (int currMachIdx = 1; currMachIdx < numberOfMachines; ++currMachIdx)
+            {
+                finishTime[currMachIdx, 0].summaryTime = finishTime[currMachIdx, 0].executionTime + finishTime[currMachIdx - 1, 0].summaryTime;
+
+                for (int currJobIdx = 1; currJobIdx < numberOfJobs; ++currJobIdx)
+                {
+                    if (finishTime[currMachIdx - 1, currJobIdx].summaryTime > finishTime[currMachIdx, currJobIdx - 1].summaryTime)
+                    {
+                        finishTime[currMachIdx, currJobIdx].summaryTime =
+                          finishTime[currMachIdx, currJobIdx].executionTime +
+                          finishTime[currMachIdx - 1, currJobIdx].summaryTime;
+                    }
+                    else
+                    {
+                        finishTime[currMachIdx, currJobIdx].summaryTime =
+                          finishTime[currMachIdx, currJobIdx].executionTime +
+                          finishTime[currMachIdx, currJobIdx - 1].summaryTime;
+                    }
+                }
+            }
+
+            return finishTime[numberOfMachines - 1, numberOfJobs - 1].summaryTime;
+        }
+
+        private static void Swap<T>(ref T lhs, ref T rhs)
+        {
+            T tmp = lhs;
+            lhs = rhs;
+            rhs = tmp;
+        }
+
+        public static void SwapJobs(List<Machine> listOfMachines, int firstJobIdx, int secondJobIdx)
+        {
+            foreach (Machine machine in listOfMachines)
+            {
+                Swap(ref machine.jobs[firstJobIdx], ref machine.jobs[secondJobIdx]);
+            }
         }
     }
 }
