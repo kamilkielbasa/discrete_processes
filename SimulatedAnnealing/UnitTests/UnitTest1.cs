@@ -136,5 +136,82 @@ namespace UnitTests
 
             Assert.AreEqual(listOfMachines.Count(), nextListOfMachines.Count());
         }
+
+        [TestMethod]
+        public void TestMethod4()
+        {
+            List<Machine> listOfMachines = new List<Machine>();
+
+            for (int i = 0; i < 3; ++i)
+                listOfMachines.Add(new Machine(4));
+
+            listOfMachines[0].jobs[0].executionTime = 1;
+            listOfMachines[0].jobs[1].executionTime = 4;
+            listOfMachines[0].jobs[2].executionTime = 3;
+            listOfMachines[0].jobs[3].executionTime = 2;
+
+            listOfMachines[1].jobs[0].executionTime = 1;
+            listOfMachines[1].jobs[1].executionTime = 1;
+            listOfMachines[1].jobs[2].executionTime = 4;
+            listOfMachines[1].jobs[3].executionTime = 4;
+
+            listOfMachines[2].jobs[0].executionTime = 3;
+            listOfMachines[2].jobs[1].executionTime = 2;
+            listOfMachines[2].jobs[2].executionTime = 3;
+            listOfMachines[2].jobs[3].executionTime = 1;
+
+            for (int i = 0; i < listOfMachines.Count(); ++i)
+            {
+                for (int j = 0; j < listOfMachines.First().jobs.Length; ++j)
+                {
+                    listOfMachines[i].jobs[j].jobId = j + 1;
+                }
+            }
+
+            List<Machine> expectedListOfMachines = new List<Machine>();
+
+            for (int i = 0; i < 3; ++i)
+                expectedListOfMachines.Add(new Machine(4));
+
+            expectedListOfMachines[0].jobs[0].executionTime = 4;
+            expectedListOfMachines[0].jobs[0].jobId = 2;
+            expectedListOfMachines[0].jobs[1].executionTime = 3;
+            expectedListOfMachines[0].jobs[1].jobId = 3;
+            expectedListOfMachines[0].jobs[2].executionTime = 1;
+            expectedListOfMachines[0].jobs[2].jobId = 1;
+            expectedListOfMachines[0].jobs[3].executionTime = 2;
+            expectedListOfMachines[0].jobs[3].jobId = 4;
+
+            expectedListOfMachines[1].jobs[0].executionTime = 1;
+            expectedListOfMachines[1].jobs[0].jobId = 2;
+            expectedListOfMachines[1].jobs[1].executionTime = 4;
+            expectedListOfMachines[1].jobs[1].jobId = 3;
+            expectedListOfMachines[1].jobs[2].executionTime = 1;
+            expectedListOfMachines[1].jobs[2].jobId = 1;
+            expectedListOfMachines[1].jobs[3].executionTime = 4;
+            expectedListOfMachines[1].jobs[3].jobId = 4;
+
+            expectedListOfMachines[2].jobs[0].executionTime = 2;
+            expectedListOfMachines[2].jobs[0].jobId = 2;
+            expectedListOfMachines[2].jobs[1].executionTime = 3;
+            expectedListOfMachines[2].jobs[1].jobId = 3;
+            expectedListOfMachines[2].jobs[2].executionTime = 3;
+            expectedListOfMachines[2].jobs[2].jobId = 1;
+            expectedListOfMachines[2].jobs[3].executionTime = 1;
+            expectedListOfMachines[2].jobs[3].jobId = 4;
+
+            Machine.InsertJob(listOfMachines, 0, 2);
+
+            int numberOfMachines = listOfMachines.Count();
+            int numberOfJobs = listOfMachines.First().jobs.Length;
+
+            for (int i = 0; i < numberOfMachines; ++i)
+            {
+                for (int j = 0; j < numberOfJobs; ++j)
+                {
+                    Assert.AreEqual(listOfMachines[i].jobs[j], expectedListOfMachines[i].jobs[j]);
+                }
+            }
+        }
     }
 }

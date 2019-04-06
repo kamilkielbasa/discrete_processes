@@ -89,5 +89,49 @@ namespace SimulatedAnnealing
                 Swap(ref machine.jobs[firstJobIdx], ref machine.jobs[secondJobIdx]);
             }
         }
+
+        public static void InsertJob(List<Machine> listOfMachines, int srcJobIdx, int dstJobIdx)
+        {
+            int numberOfMachines = listOfMachines.Count();
+            int numberOfJobs = listOfMachines.First().jobs.Length;
+
+            List<List<Job>> list = new List<List<Job>>();
+
+            for (int i = 0; i < numberOfMachines; ++i)
+            {
+                list.Add(new List<Job>());
+
+                for (int j = 0; j < numberOfJobs; ++j)
+                {
+                    if (j != srcJobIdx)
+                    {
+                        list[i].Add(listOfMachines[i].jobs[j]);
+                    }
+                }
+            }
+
+            for (int i = 0; i < numberOfMachines; ++i)
+            {
+                for (int j = 0; j < numberOfJobs; ++j)
+                {
+                    if (j == dstJobIdx)
+                    {
+                        list[i].Insert(j, listOfMachines[i].jobs[srcJobIdx]);
+                    }
+                }
+            }
+
+            listOfMachines.Clear();
+
+            for (int i = 0; i < numberOfMachines; ++i)
+            {
+                listOfMachines.Add(new Machine(numberOfJobs));
+
+                for (int j = 0; j < numberOfJobs; ++j)
+                {
+                    listOfMachines[i].jobs[j] = list[i][j];
+                }
+            }
+        }
     }
 }

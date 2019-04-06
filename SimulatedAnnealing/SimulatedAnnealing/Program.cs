@@ -38,6 +38,8 @@ namespace SimulatedAnnealing
                 }
             }
 
+            Machine.InsertJob(listOfMachines, 0, 2);
+
             Annealing.StartAnnealing(listOfMachines);
             
             Console.ReadKey();
