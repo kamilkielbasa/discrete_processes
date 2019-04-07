@@ -8,7 +8,7 @@ namespace SimulatedAnnealing
 {
     public class Annealing
     {
-        public static void computeNext(List<Machine> currentListOfMachines, List<Machine> newListOfMachines)
+        public static void computeNext(List<Machine> currentListOfMachines, List<Machine> newListOfMachines, bool swap)
         {
             newListOfMachines.Clear();
 
@@ -20,13 +20,20 @@ namespace SimulatedAnnealing
             int randomIndex1 = random.Next(0, currentListOfMachines.Count());
             int randomIndex2 = random.Next(0, currentListOfMachines.Count());
 
-            Machine.SwapJobs(newListOfMachines, randomIndex1, randomIndex2);
+            if (swap == true)
+            {
+                Machine.SwapJobs(newListOfMachines, randomIndex1, randomIndex2);
+            }
+            else
+            {
+                Machine.InsertJob(newListOfMachines, randomIndex1, randomIndex2);
+            }
         }
 
-        public static decimal StartAnnealing(List<Machine> listOfMachines)
+        public static List<Machine> StartAnnealing(List<Machine> listOfMachines)
         {
             double proba;
-            double alpha = 0.999;
+            double alpha = 0.9999999;
             double temperature = 400.0;
             double epsilon = 0.001;
             double delta;
@@ -34,13 +41,20 @@ namespace SimulatedAnnealing
             List<Machine> next = new List<Machine>();
             double distance = (double)Machine.FindCmax(listOfMachines); // cmax
 
+            string logPath = @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\SimulatedAnnealing\Log.txt";
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(logPath, true))
+            {
+                file.WriteLine("alpha = {0}, temperature = {1}, epsilon = {2}", alpha, temperature, epsilon);
+            }
+
             while (temperature > epsilon)
             {
                 ++iteration;
 
-                computeNext(listOfMachines, next);
+                computeNext(listOfMachines, next, true);
 
-                delta = (double)Machine.FindCmax(next) - distance;
+                double tmp = (double)Machine.FindCmax(next);
+                delta = tmp - distance;
 
                 if (delta < 0)
                 {
@@ -53,7 +67,7 @@ namespace SimulatedAnnealing
                     Random random = new Random();
                     proba = random.Next(0, 1);
 
-                    if (proba < Math.Exp(delta / temperature))
+                    if (Math.Exp((-delta) / temperature) >= proba)
                     {
                         listOfMachines.Clear();
                         listOfMachines = next.ToList();
@@ -63,15 +77,18 @@ namespace SimulatedAnnealing
 
                 temperature *= alpha;
 
-                Console.WriteLine("calculating cmax = {0} ...", distance);
+                //Console.WriteLine("calculating cmax = {0} ...", distance);
+
+                if (iteration % 10000 == 0)
+                    Console.WriteLine("temp = {0}", temperature);
             }
 
-            for (int i = 0; i < listOfMachines.First().jobs.Length; ++i)
-                Console.Write("{0} ", listOfMachines[0].jobs[i].jobId);
+            //for (int i = 0; i < listOfMachines.First().jobs.Length; ++i)
+                //Console.Write("{0} ", listOfMachines[0].jobs[i].jobId);
 
-            Console.WriteLine("cmax = {0}", distance);
+            //Console.WriteLine("cmax = {0}", distance);
 
-            return (decimal)distance;
+            return listOfMachines;
         }
     }
 }

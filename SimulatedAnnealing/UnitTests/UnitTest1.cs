@@ -132,7 +132,7 @@ namespace UnitTests
             for (int i = 0; i < listOfMachines.Count(); ++i)
                 Assert.AreEqual(copyListOfMachines[i], listOfMachines[i]);
 
-            Annealing.computeNext(listOfMachines, nextListOfMachines);
+            Annealing.computeNext(listOfMachines, nextListOfMachines, true);
 
             Assert.AreEqual(listOfMachines.Count(), nextListOfMachines.Count());
         }
