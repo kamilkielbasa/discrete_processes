@@ -12,7 +12,7 @@ namespace NEH
     {
         static void Main(string[] args)
         {
-            const int maxIteration = 5;
+            const int maxIteration = 51;
 
             string testPath = @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\NEH\TestData.txt";
             string logPath = @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\NEH\Log.txt";
@@ -63,7 +63,7 @@ namespace NEH
                             for (int machineIdx = 0; machineIdx < numberOfMachines; ++machineIdx)
                             {
                                 listOfMachines[machineIdx].jobs[jobIdx].executionTime = decimal.Parse(substrings[machineIdx]);
-                                listOfMachines[machineIdx].jobs[jobIdx].jobId = jobIdx;
+                                listOfMachines[machineIdx].jobs[jobIdx].jobId = jobIdx + 1;
                             }
                         }
 
@@ -85,7 +85,7 @@ namespace NEH
                     sequence += value.jobId + " ";
                 }
 
-                decimal cmax = NEH.FindCmax(listOfMachines, result, result.Length);
+                decimal cmax = Machine.FindCmax(listOfMachines);
 
                 string line = "-----NEH ALGORITHM------" + Environment.NewLine +
                               "Iteration:" + currentIteration.ToString() +

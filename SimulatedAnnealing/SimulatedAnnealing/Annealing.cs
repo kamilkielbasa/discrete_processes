@@ -33,7 +33,7 @@ namespace SimulatedAnnealing
         public static List<Machine> StartAnnealing(List<Machine> listOfMachines)
         {
             double proba;
-            double alpha = 0.9999999;
+            double alpha = 0.999;
             double temperature = 400.0;
             double epsilon = 0.001;
             double delta;
@@ -78,9 +78,6 @@ namespace SimulatedAnnealing
                 temperature *= alpha;
 
                 //Console.WriteLine("calculating cmax = {0} ...", distance);
-
-                if (iteration % 10000 == 0)
-                    Console.WriteLine("temp = {0}", temperature);
             }
 
             //for (int i = 0; i < listOfMachines.First().jobs.Length; ++i)

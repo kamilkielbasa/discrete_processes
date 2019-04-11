@@ -49,64 +49,6 @@ namespace NEH
             return output.jobId;
         }
 
-        public static decimal FindCmax(List<Machine> machineList, Job[] jobs, int numberOfCalcJobs)
-        {
-            decimal cmax = 0;
-
-            if (numberOfCalcJobs == 1)
-            {
-                int searchIndex = 0;
-
-                for (int i = 0; i < machineList.Count(); ++i)
-                {
-                    for (int j = 0; j < jobs.Length; ++j)
-                    {
-                        if (jobs[0].jobId == machineList[i].jobs[j].jobId)
-                        {
-                            searchIndex = j;
-                            break;
-                        }
-                    }
-                }
-
-                for (int i = 0; i < machineList.Count(); ++i)
-                {
-                    cmax += machineList[i].jobs[searchIndex].executionTime;
-                }
-            }
-            else
-            {
-                Job[,] machines = new Job[machineList.Count(), jobs.Length];
-
-                for (int i = 0; i < jobs.Length; ++i)
-                {
-                    for (int j = 0; j < machineList.Count(); ++j)
-                    {
-                        for (int k = 0; k < jobs.Length; ++k)
-                        {
-                            if (jobs[i].jobId == machineList[j].jobs[k].jobId)
-                            {
-                                machines[j, i].executionTime = machineList[j].jobs[k].executionTime;
-                                machines[j, i].jobId = jobs[i].jobId;
-                            }
-                        }
-                    }
-                }
-
-                for (int i = 0; i < numberOfCalcJobs; ++i)
-                {
-                    cmax += machines[0, i].executionTime;
-                }
-
-                for (int i = 1; i < machineList.Count(); ++i)
-                {
-                    cmax += machines[i, numberOfCalcJobs - 1].executionTime;
-                }
-            }
-
-            return cmax;
-        }
-
         public static Job[] NEHAlgorithm(List<Machine> listOfMachines)
         {
             int numberOfJobs = listOfMachines.First().jobs.Length;
@@ -143,13 +85,13 @@ namespace NEH
                 outputJobs[0].jobId = FindMaxWeight(weights); // gucci
 
                 Array.Copy(outputJobs, theBestFoundJobs, outputJobs.Length);
-                decimal cmax = FindCmax(listOfMachines, outputJobs, i + 1);
+                decimal cmax = Machine.FindCmax2(listOfMachines, i + 1);
 
                 for (int j = 0; j < insertedJobsToOutput; ++j)
                 {
                     SwapJobs(ref outputJobs, j, j + 1);
 
-                    decimal currentCmax = FindCmax(listOfMachines, outputJobs, i + 1);
+                    decimal currentCmax = Machine.FindCmax2(listOfMachines, i + 1);
 
                     if (currentCmax < cmax)
                     {

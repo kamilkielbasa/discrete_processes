@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SimulatedAnnealing
 {
+    public static class GenericCopier<T>
+    {
+        public static T DeepCopy(object objectToCopy)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, objectToCopy);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (T)binaryFormatter.Deserialize(memoryStream);
+            }
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -19,7 +34,7 @@ namespace SimulatedAnnealing
 
             File.WriteAllText(logPath, String.Empty);
 
-            for (int currentIteration = 50; currentIteration < maxIteration; ++currentIteration)
+            for (int currentIteration = 0; currentIteration < maxIteration; ++currentIteration)
             {
                 int numberOfMachines = 0;
                 int numberOfJobs = 0;
@@ -73,7 +88,7 @@ namespace SimulatedAnnealing
 
                 // time measurement
                 Stopwatch s1 = new Stopwatch();
-
+              
                 s1.Start();
                 List<Machine> result = Annealing.StartAnnealing(listOfMachines);
                 s1.Stop();

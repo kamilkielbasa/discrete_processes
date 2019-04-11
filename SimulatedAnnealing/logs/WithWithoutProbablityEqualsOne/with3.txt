@@ -1,0 +1,255 @@
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.0 -----ANNAELING ALGORITHM------
+Iteration:0 Sequence:2 1 0 3  Cmax:41 Time:00:00:00.1058127
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.1 -----ANNAELING ALGORITHM------
+Iteration:1 Sequence:4 3 2 1 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1443 Time:00:00:00.2822686
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.2 -----ANNAELING ALGORITHM------
+Iteration:2 Sequence:4 1 2 0 3 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1592 Time:00:00:00.1814022
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.3 -----ANNAELING ALGORITHM------
+Iteration:3 Sequence:4 2 0 3 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1583 Time:00:00:00.1791768
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.4 -----ANNAELING ALGORITHM------
+Iteration:4 Sequence:3 1 0 4 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1746 Time:00:00:00.1170491
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.5 -----ANNAELING ALGORITHM------
+Iteration:5 Sequence:3 4 1 2 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1431 Time:00:00:00.1977515
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.6 -----ANNAELING ALGORITHM------
+Iteration:6 Sequence:4 2 0 3 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1536 Time:00:00:00.2295684
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.7 -----ANNAELING ALGORITHM------
+Iteration:7 Sequence:3 1 0 2 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1555 Time:00:00:00.2461001
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.8 -----ANNAELING ALGORITHM------
+Iteration:8 Sequence:4 3 1 0 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1428 Time:00:00:00.1537036
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.9 -----ANNAELING ALGORITHM------
+Iteration:9 Sequence:3 1 4 2 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1501 Time:00:00:00.1268353
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.10 -----ANNAELING ALGORITHM------
+Iteration:10 Sequence:1 4 0 3 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:1413 Time:00:00:00.1196624
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.11 -----ANNAELING ALGORITHM------
+Iteration:11 Sequence:5 1 3 6 4 0 2 8 7 9 10 11 12 13 14 15 16 17 18 19  Cmax:1957 Time:00:00:00.2110794
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.12 -----ANNAELING ALGORITHM------
+Iteration:12 Sequence:0 3 7 6 5 2 8 4 1 9 10 11 12 13 14 15 16 17 18 19  Cmax:2214 Time:00:00:00.3968178
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.13 -----ANNAELING ALGORITHM------
+Iteration:13 Sequence:8 2 1 3 6 4 5 7 0 9 10 11 12 13 14 15 16 17 18 19  Cmax:1770 Time:00:00:00.2064446
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.14 -----ANNAELING ALGORITHM------
+Iteration:14 Sequence:0 2 7 4 1 5 6 9 8 3 10 11 12 13 14 15 16 17 18 19  Cmax:1769 Time:00:00:00.2200685
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.15 -----ANNAELING ALGORITHM------
+Iteration:15 Sequence:7 2 1 3 4 5 0 9 8 6 10 11 12 13 14 15 16 17 18 19  Cmax:1843 Time:00:00:00.2046741
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.16 -----ANNAELING ALGORITHM------
+Iteration:16 Sequence:3 5 4 0 2 7 8 9 1 6 10 11 12 13 14 15 16 17 18 19  Cmax:1877 Time:00:00:00.2490097
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.17 -----ANNAELING ALGORITHM------
+Iteration:17 Sequence:2 7 4 9 5 1 6 8 3 0 10 11 12 13 14 15 16 17 18 19  Cmax:1941 Time:00:00:00.2910274
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.18 -----ANNAELING ALGORITHM------
+Iteration:18 Sequence:2 4 6 0 1 5 3 7 8 9 10 11 12 13 14 15 16 17 18 19  Cmax:2128 Time:00:00:00.1923072
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.19 -----ANNAELING ALGORITHM------
+Iteration:19 Sequence:7 4 3 5 1 0 2 8 6 9 10 11 12 13 14 15 16 17 18 19  Cmax:1934 Time:00:00:00.2307401
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.20 -----ANNAELING ALGORITHM------
+Iteration:20 Sequence:0 1 5 8 7 2 6 4 9 3 10 11 12 13 14 15 16 17 18 19  Cmax:2086 Time:00:00:00.2540403
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.21 -----ANNAELING ALGORITHM------
+Iteration:21 Sequence:17 16 2 13 3 7 9 8 15 0 4 11 18 1 10 19 5 12 6 14  Cmax:2969 Time:00:00:00.4332662
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.22 -----ANNAELING ALGORITHM------
+Iteration:22 Sequence:13 19 5 3 4 2 7 6 8 14 17 9 16 1 0 15 18 12 11 10  Cmax:2648 Time:00:00:00.5401871
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.23 -----ANNAELING ALGORITHM------
+Iteration:23 Sequence:5 8 2 9 3 15 12 10 11 16 18 13 6 14 0 17 4 7 1 19  Cmax:2778 Time:00:00:00.6457227
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.24 -----ANNAELING ALGORITHM------
+Iteration:24 Sequence:10 13 8 16 1 17 11 2 9 18 3 5 12 4 15 14 7 6 0 19  Cmax:2804 Time:00:00:00.4027651
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.25 -----ANNAELING ALGORITHM------
+Iteration:25 Sequence:6 2 1 0 5 12 7 4 3 19 15 13 17 18 9 8 11 10 14 16  Cmax:2776 Time:00:00:00.6435463
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.26 -----ANNAELING ALGORITHM------
+Iteration:26 Sequence:1 17 0 4 5 15 16 7 12 11 18 10 9 2 19 3 6 8 13 14  Cmax:2586 Time:00:00:00.4412735
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.27 -----ANNAELING ALGORITHM------
+Iteration:27 Sequence:5 8 2 18 1 13 3 19 9 10 0 4 14 15 11 12 16 17 6 7  Cmax:2693 Time:00:00:00.6219977
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.28 -----ANNAELING ALGORITHM------
+Iteration:28 Sequence:18 1 9 10 4 5 12 19 8 11 0 17 3 2 15 16 14 6 7 13  Cmax:2644 Time:00:00:00.5327721
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.29 -----ANNAELING ALGORITHM------
+Iteration:29 Sequence:3 8 1 12 10 11 0 9 2 18 5 6 14 13 7 15 17 16 4 19  Cmax:2692 Time:00:00:00.6558996
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.30 -----ANNAELING ALGORITHM------
+Iteration:30 Sequence:19 15 5 3 8 18 9 7 13 17 10 16 1 0 14 4 11 6 12 2  Cmax:2852 Time:00:00:00.5233190
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.31 -----ANNAELING ALGORITHM------
+Iteration:31 Sequence:0 2 3 4 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3095 Time:00:00:00.5352347
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.32 -----ANNAELING ALGORITHM------
+Iteration:32 Sequence:3 4 0 1 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3515 Time:00:00:00.2459396
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.33 -----ANNAELING ALGORITHM------
+Iteration:33 Sequence:2 3 0 4 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:2901 Time:00:00:00.2195841
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.34 -----ANNAELING ALGORITHM------
+Iteration:34 Sequence:4 3 1 0 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3093 Time:00:00:00.3437786
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.35 -----ANNAELING ALGORITHM------
+Iteration:35 Sequence:1 2 3 4 0 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3137 Time:00:00:00.3324779
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.36 -----ANNAELING ALGORITHM------
+Iteration:36 Sequence:3 4 0 1 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3199 Time:00:00:00.2408419
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.37 -----ANNAELING ALGORITHM------
+Iteration:37 Sequence:3 2 0 1 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3438 Time:00:00:00.2414034
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.38 -----ANNAELING ALGORITHM------
+Iteration:38 Sequence:1 2 0 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3140 Time:00:00:00.3665135
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.39 -----ANNAELING ALGORITHM------
+Iteration:39 Sequence:0 3 2 4 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:2914 Time:00:00:00.3228919
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.40 -----ANNAELING ALGORITHM------
+Iteration:40 Sequence:1 3 0 4 2 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3194 Time:00:00:00.2499125
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.41 -----ANNAELING ALGORITHM------
+Iteration:41 Sequence:2 9 1 6 4 7 3 8 5 0 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3781 Time:00:00:00.4260944
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.42 -----ANNAELING ALGORITHM------
+Iteration:42 Sequence:6 2 3 7 8 1 9 4 0 5 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3685 Time:00:00:00.5575423
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.43 -----ANNAELING ALGORITHM------
+Iteration:43 Sequence:9 3 4 7 1 2 8 0 5 6 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3567 Time:00:00:00.6242345
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.44 -----ANNAELING ALGORITHM------
+Iteration:44 Sequence:0 7 3 8 5 6 1 2 9 4 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3727 Time:00:00:00.5219729
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.45 -----ANNAELING ALGORITHM------
+Iteration:45 Sequence:4 3 0 8 7 5 2 6 1 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3710 Time:00:00:00.6441353
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.46 -----ANNAELING ALGORITHM------
+Iteration:46 Sequence:1 5 4 3 9 2 6 7 8 0 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3707 Time:00:00:00.4894311
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.47 -----ANNAELING ALGORITHM------
+Iteration:47 Sequence:8 3 9 0 5 4 2 7 6 1 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3665 Time:00:00:00.7402740
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.48 -----ANNAELING ALGORITHM------
+Iteration:48 Sequence:7 2 4 8 5 3 0 9 1 6 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3643 Time:00:00:00.5760811
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.49 -----ANNAELING ALGORITHM------
+Iteration:49 Sequence:3 5 6 4 0 8 1 9 7 2 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3815 Time:00:00:00.8080699
+
+
+alpha = 0,999, temperature = 400, epsilon = 0,001
+Test data: data.50 -----ANNAELING ALGORITHM------
+Iteration:50 Sequence:3 2 8 5 1 4 9 0 6 7 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49  Cmax:3845 Time:00:00:00.6288059
+
+
