@@ -10,13 +10,15 @@ namespace UnitTest
     [TestClass]
     public class UnitTest1
     {
-        [TestMethod]
-        public void TestMethodFor50RPQ()
-        {
-            string pathToTestData =
-              @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\Schrage\Schrage\TestDate\in50.txt";
+        private const string pathToDate =
+            @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\Schrage\Schrage\TestDate\";
 
-            FileReader fr = new FileReader(pathToTestData);
+        [TestMethod]
+        public void TestMethodForSchrage50RPQ()
+        {
+            string pathToDate50RPQ = pathToDate + "in50.txt";
+
+            FileReader fr = new FileReader(pathToDate50RPQ);
 
             List<RPQ> listOfRPQ = fr.Execute();
 
@@ -29,12 +31,11 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethodFor100RPQ()
+        public void TestMethodForSchrage100RPQ()
         {
-            string pathToTestData =
-              @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\Schrage\Schrage\TestDate\in100.txt";
+            string pathToDate100RPQ = pathToDate + "in100.txt";
 
-            FileReader fr = new FileReader(pathToTestData);
+            FileReader fr = new FileReader(pathToDate100RPQ);
 
             List<RPQ> listOfRPQ = fr.Execute();
 
@@ -47,12 +48,11 @@ namespace UnitTest
         }
 
         [TestMethod]
-        public void TestMethodFor200RPQ()
+        public void TestMethodForSchrage200RPQ()
         {
-            string pathToTestData =
-              @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\Schrage\Schrage\TestDate\in200.txt";
+            string pathToDate200RPQ = pathToDate + "in200.txt";
 
-            FileReader fr = new FileReader(pathToTestData);
+            FileReader fr = new FileReader(pathToDate200RPQ);
 
             List<RPQ> listOfRPQ = fr.Execute();
 
@@ -62,6 +62,48 @@ namespace UnitTest
             int cmax = output.Item2;
 
             Assert.AreEqual(6416, cmax);
+        }
+
+        [TestMethod]
+        public void TestMethodForSchragePmtn50RPQ()
+        {
+            string pathToDate50RPQ = pathToDate + "in50.txt";
+
+            FileReader fr = new FileReader(pathToDate50RPQ);
+
+            List<RPQ> listOfRPQ = fr.Execute();
+
+            int cmax = SchragePmtnAlgorithm.Execute(listOfRPQ);
+
+            Assert.AreEqual(1492, cmax);
+        }
+
+        [TestMethod]
+        public void TestMethodForSchragePmtn100RPQ()
+        {
+            string pathToDate100RPQ = pathToDate + "in100.txt";
+
+            FileReader fr = new FileReader(pathToDate100RPQ);
+
+            List<RPQ> listOfRPQ = fr.Execute();
+
+            int cmax = SchragePmtnAlgorithm.Execute(listOfRPQ);
+
+            Assert.AreEqual(3070, cmax);
+        }
+
+        [TestMethod]
+        public void TestMethodForSchragePmtn200RPQ()
+        {
+            string pathToDate200RPQ = pathToDate + "in200.txt";
+
+            FileReader fr = new FileReader(pathToDate200RPQ);
+
+            List<RPQ> listOfRPQ = fr.Execute();
+
+            int cmax = SchragePmtnAlgorithm.Execute(listOfRPQ);
+
+            Assert.AreEqual(6398, cmax);
         }
     }
 }

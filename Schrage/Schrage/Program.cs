@@ -13,6 +13,13 @@ namespace Schrage
         public int p { get; set; }
         public int q { get; set; }
 
+        public RPQ()
+        {
+            this.r = 0;
+            this.p = 0;
+            this.q = 0;
+        }
+
         public RPQ(int r, int p, int q)
         {
             this.r = r;
@@ -106,11 +113,60 @@ namespace Schrage
         }
     }
 
+    public class SchragePmtnAlgorithm
+    {
+        public static int Execute(List<RPQ> listOfRPQ)
+        {
+            int cmax = 0;
+            List<RPQ> listOfSortedRPQ = new List<RPQ>();
+            List<RPQ> listOfUnsortedRPQ = listOfRPQ;
+            int t = 0;
+            RPQ l = new RPQ();
+
+            while (listOfSortedRPQ.Any() == true || listOfUnsortedRPQ.Any() == true)
+            {
+                while (listOfUnsortedRPQ.Any() == true && listOfUnsortedRPQ.Min(RPQ => RPQ.r) <= t)
+                {
+                    RPQ j = listOfUnsortedRPQ.Find(x => x.r == listOfUnsortedRPQ.Min(RPQ => RPQ.r));
+                    listOfSortedRPQ.Add(j);
+                    listOfUnsortedRPQ.Remove(j);
+
+                    if (j.q > l.q)
+                    {
+                        l.p = t - j.r;
+                        t = j.r;
+
+                        if (j.p > 0)
+                        {
+                            listOfSortedRPQ.Add(l);
+                        }
+                    }
+                }
+
+                if (listOfSortedRPQ.Any() == false)
+                {
+                    t = listOfUnsortedRPQ.Min(RPQ => RPQ.r);
+                }
+                else
+                {
+                    RPQ j = listOfSortedRPQ.Find(x => x.q == listOfSortedRPQ.Max(RPQ => RPQ.q));
+                    listOfSortedRPQ.Remove(j);
+                    l = j;
+                    t += j.p;
+                    cmax = Math.Max(cmax, t + j.q);
+                }
+            }
+
+            return cmax;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Hello Schrage and SchragePmtn!");
+            Console.ReadKey();
         }
     }
 }
