@@ -11,7 +11,7 @@ namespace UnitTest
     public class UnitTest1
     {
         private const string pathToDate =
-            @"C:\Users\kielbkam\Desktop\Programming Platforms\discrete_processes\Schrage\Schrage\TestDate\";
+            @"C:\Users\kielbkam\Desktop\semestr 6\discrete_processes\Schrage\Schrage\TestDate\";
 
         [TestMethod]
         public void TestMethodForSchrage50RPQ()
@@ -104,6 +104,22 @@ namespace UnitTest
             int cmax = SchragePmtnAlgorithm.Execute(listOfRPQ);
 
             Assert.AreEqual(6398, cmax);
+        }
+
+        [TestMethod]
+        public void TestMethodForCarlier50RPQ()
+        {
+            string pathToDate50RPQ = pathToDate + "in50.txt";
+
+            FileReader fr = new FileReader(pathToDate50RPQ);
+
+            List<RPQ> listOfRPQ = fr.Execute();
+
+            Carlier.Execute(listOfRPQ);
+
+            int cmax = SchragePmtnAlgorithm.Execute(listOfRPQ);
+
+            Assert.AreEqual(1492, cmax);
         }
     }
 }
